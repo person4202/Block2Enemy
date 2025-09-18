@@ -9,16 +9,22 @@ let player = sprites.create(img`
 `, SpriteKind.Player)
 
 controller.moveSprite(player)
+scene.cameraFollowSprite(player)
 
 tiles.setTilemap(tilemap`level1`)
 tiles.placeOnRandomTile(player, assets.tile`myTile`)
 
-enemyBlocks.spawnEnemyNearTile(player, assets.tile`myTile`, img`
-    . . . . . . . .
-    . . 5 5 5 5 . .
-    . 5 5 5 5 5 5 .
-    . 5 5 5 5 5 5 .
-    . . 5 5 5 5 . .
-    . . . 5 5 . . .
-    . . . . . . . .
-`, 24)
+enemyBlocks.spawnEnemyNearTile(
+    player,
+    assets.tile`myTile`,
+    img`
+        . . . . . . . .
+        . . 5 5 5 5 . .
+        . 5 5 5 5 5 5 .
+        . 5 5 5 5 5 5 .
+        . . 5 5 5 5 . .
+        . . . 5 5 . . .
+        . . . . . . . .
+    `,
+    24
+)
